@@ -1,6 +1,5 @@
 import openai
 
-#openai.api_key = 'CANT'
 
 def get_bot_response(user_input):
     try:
