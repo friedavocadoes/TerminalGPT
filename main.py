@@ -1,7 +1,6 @@
 import openai
 
-# Set your OpenAI API key here
-openai.api_key = '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'
+openai.api_key = 'CANT'
 
 def get_bot_response(user_input):
     try:
