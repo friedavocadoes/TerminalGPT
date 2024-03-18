@@ -1,5 +1,6 @@
 import openai
 
+openai.api_key = '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'
 
 def get_bot_response(user_input):
     try:
