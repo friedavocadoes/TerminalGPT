@@ -4,15 +4,15 @@ f = open("API.txt", 'r')
 
 def apier():
     api = input("Input your API Key: ")
-    f2 = open("API", 'w')
+    f2 = open("API.txt", 'w')
     f2.write(api)
 
 
-if (f.read() == ""):
+while (f.read() == ""):
     apier()
 
-
-openai.api_key = f.read()
+api = f.readline()
+openai.api_key = api
 
 def get_bot_response(user_input):
     try:
