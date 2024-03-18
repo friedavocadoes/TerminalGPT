@@ -1,6 +1,18 @@
 import openai
 
-openai.api_key = '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'
+f = open("API.txt", 'r')
+
+def apier():
+    api = input("Input your API Key: ")
+    f2 = open("API", 'w')
+    f2.write(api)
+
+
+if (f.read() == ""):
+    apier()
+
+
+openai.api_key = f.read()
 
 def get_bot_response(user_input):
     try:
