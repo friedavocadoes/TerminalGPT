@@ -1,23 +1,27 @@
 import openai
 
-f = open("API.txt", 'r')
-
 def apier():
     api = input("Input your API Key: ")
+    api.rstrip('\n')
     f2 = open("API.txt", 'w')
     f2.write(api)
+    f2.close()
 
+f = open("API.txt", 'r+')
 
-while (f.read() == ""):
-    apier()
+api = f.read()
+while api == "":
+     apier()
+     api = f.read()
 
-api = f.readline()
+f.close()
+
 openai.api_key = api
 
 def get_bot_response(user_input):
     try:
         response = openai.chat.completions.create(
-            model="gpt-3.5-turbo-1106",
+            model="davinci-002",
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
                 {"role": "user", "content": user_input}
